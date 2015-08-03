@@ -15,3 +15,4 @@ The pop-up example has been tested against the following web browsers:
 * Google Chrome 44 (Linux/Windows/Mac)
 * Internet Explorer 11
 * Safari 8
+* Opera 30
