@@ -3,6 +3,7 @@
 session_start();
 
 include "lightopenid/openid.php";
+// change 'localhost' in the next line to the actual name of your server
 $openid = new LightOpenID('localhost');
 if ($openid->mode) {
     if ($openid->validate()) {
