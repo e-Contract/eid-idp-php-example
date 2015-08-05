@@ -55,7 +55,8 @@ class LightOpenID
          , $verify_peer = null
          , $capath = null
          , $cainfo = null
-         , $data;
+         , $data
+         , $lang;
     private $identity, $claimed_id;
     protected $server, $version, $trustRoot, $aliases, $identifier_select = false
             , $ax = false, $sreg = false, $setup_url = null, $headers = array();
@@ -606,6 +607,14 @@ class LightOpenID
         return $params;
     }
 
+    protected function langParams()
+    {
+        $params = array();
+        $params['openid.ns.ui'] = 'http://specs.openid.net/extensions/ui/1.0';
+        $params['openid.ui.lang'] = $this->lang;
+        return $params;
+    }
+
     protected function authUrl_v1($immediate)
     {
         $returnUrl = $this->returnUrl;
@@ -645,6 +654,9 @@ class LightOpenID
             # If OP doesn't advertise either SREG, nor AX, let's send them both
             # in worst case we don't get anything in return.
             $params += $this->axParams() + $this->sregParams();
+        }
+        if ($this->lang) {
+            $params += $this->langParams();
         }
 
         if ($this->identifier_select) {

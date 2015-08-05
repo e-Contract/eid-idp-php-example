@@ -15,6 +15,7 @@ if ($openid->mode) {
                 'contact/postalAddress/home', 'contact/city/home', 'eid/nationality',
                 'eid/pob', 'birthDate', 'eid/card-number', 'eid/card-validity/begin',
                 'eid/card-validity/end');
+        $openid->lang = 'nl';
         header('Location: ' . $openid->authUrl());
 }
 ?>
