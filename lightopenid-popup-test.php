@@ -49,5 +49,8 @@
         </script>
         <div id="result"></div>
         <button onclick="openPopup();">eID login</button>
+        <p>
+            <a href="./">Back</a>
+        </p>
     </body>
 </html>
