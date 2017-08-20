@@ -288,7 +288,7 @@ class LightOpenID
             $opts = array(
                 'http' => array(
                     'method' => 'POST',
-                    'header'  => 'Content-type: application/x-www-form-urlencoded',
+                    'header'  => 'Content-type: application/x-www-form-urlencoded; charset=UTF-8',
                     'content' => $params,
                     'ignore_errors' => true,
                 ), 'ssl' => array(
